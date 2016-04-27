@@ -2,7 +2,7 @@
 {% block content %}
       <div class="row"> 
 
-        <div>
+        <div class="six columns">
           {% if complete %}
           <h5> Summary </h5>
           Team Name: {{team}}<br>
@@ -14,17 +14,25 @@
           Time Score: {{timeS}}<br>
           Bonus Score: {{bonus}}<br>
           <br>
-          Total Score: {{Total_Score}}<br>
+          Total Score: {{Total_Score}}<br><br>
 
+         
+          <!--INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh to view results"-->
+          <!--input class= "button-primary" type="button" onClick="http://climate-race.appspot.com/" VALUE="Refresh to view results"-->
+          
+          <b> Refresh your browser to see your submission in the table below </b>
           {% else %}
           {{error}}
 
           {% endif %}
 
-
-
-          <hr>
+    
+          </div>
         </div>
+        <div class ="row">
+          <div class="u-full-width">
+          <hr>
+          </div>
         
 
       <form method="post">
@@ -95,6 +103,8 @@
       </div> 
 
       <hr>
+      <div class="row">
+      <h5>Submitted Teams </h5>
 <table class="u-full-width">
   <thead>
     <tr>
@@ -118,7 +128,7 @@
   </tbody>
 </table>
 
-
+</div>
 
     
 
