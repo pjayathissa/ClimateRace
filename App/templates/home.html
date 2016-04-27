@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+      <div class="row"> 
+
+        <div>
+          {% if complete %}
+          <h5> Summary </h5>
+          Team Name: {{team}}<br>
+          Participants: {{names}}<br>
+          <br>
+          Hours Taken: {{hours}}<br>
+          <br>
+          Distance Score: {{dist}}<br>
+          Time Score: {{timeS}}<br>
+          Bonus Score: {{bonus}}<br>
+          <br>
+          Total Score: {{Total_Score}}<br>
+
+          {% else %}
+          {{error}}
+
+          {% endif %}
+
+
+
+          <hr>
+        </div>
+        
+
+      <form method="post">
+        <div class="six columns">
+        <label>Your Team Name</label>
+        <input type="text" name="team" value="{{team}}"> {{errorUser}}<br>
+        <label>Names of Participants</label>
+         <input type="text" name="names" value="{{names}}"> {{errorUser}}<br>
+        <label>Starting Location </label><input type="text" name="loc" value="{{loc}}"> {{errorUser}}<br>
+        <label>Time of Departure </label><input type='text' class="form-control" id='datetimepicker4' name="time_dep" value="{{time_dep}}"> {{errorUser}}<br>
+        <label>Time of Arrival</label> <input type='text' class="form-control" id='datetimepicker5' name="time_arr" value="{{time_arr}}"> {{errorUser}}<br>
+
+
+        
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker4').datetimepicker();
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker5').datetimepicker();
+            });
+        </script>
+
+
+        </div >
+
+        <div class="col-sm-6">
+        <label>Distance Traveled by:</label> 
+       <label>Hitchiking</label> <input type="number" name="hitch" min="0" step="1" value="{{hitch}}" placeholder="x2 multiplier"> km
+       <em style= "color:grey">x2 Score</em>
+        <label>Biking</label> <input type="number" name="bike" min="0" step="1" value="{{bike}}" placeholder="x10 multiplier"> km
+        <em style= "color:grey">x10 Score</em>
+        <label>Walking</label> <input type="number" name="walk" min="0" step="1" value="{{walk}}" placeholder="x20 multiplier"> km 
+        <em style= "color:grey">x20 Score</em>
+
+      </div>
+    </div>
+        <div class="u-full-width">
+        <h5>Bonus Challenges </h5>
+
+        The most useless item: Bring a useless item with you, for example a brick, a broken tv, a car tyre. A side competition will be available for the most creative useless item. Note that the weight of the most useless item counts towards your score <br>
+
+<div class="row"> 
+  <div class="three columns">
+
+        <label>Useless Item Name </label><input type="text" name="item_name" value="{{item_name}}" > 
+      </div>
+    <div class="six columns">
+        <label>Weight of useless item</label> <input type="number" name="item_weight" min="0" step="1" value="{{item_weight}}" placeholder="x20 multiplier"> kg <em style= "color:grey">x20 Score</em>
+      </div>
+<div class="twelve columns">
+        <label>Litres of Alcohol Consumed</label> <input type="number" name="alcohol" min="0" step="1" value="{{alcohol}}"> kg <em style= "color:grey">x15 Score</em>
+
+        <label>Number of museums or cultural sites visited (selfie required) </label><input type="number" name="monuments" min="0" step="1" value="{{monuments}}" placeholder="x50 multiplier"> <em style= "color:grey">x50 Score</em>
+      </div>
+
+        </div>
+
+
+        <input class="button-primary" type="submit" >
+
+      </form> 
+        
+        
+      </div> 
+
+
+{% endblock %}
