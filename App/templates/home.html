@@ -94,5 +94,34 @@
         
       </div> 
 
+      <hr>
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Distance Score</th>
+      <th>Time Score</th>
+      <th>Bonus Score</th>
+      <th>Total Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for submission in submissions %}
+    <tr>
+      <td>{{submission.team}}</td>
+      <td>{{submission.Dist_Score}}</td>
+      <td>{{submission.Time_Score}}</td>
+      <td>{{submission.Bonus_Score}}</td>
+      <td><b>{{submission.Total_Score}}</b></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+    
+
+
 
 {% endblock %}
